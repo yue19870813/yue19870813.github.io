@@ -109,18 +109,18 @@
 
 </div>
 
-  <meta name="description" content="引擎选择游戏引擎的选择是项目开始的第一项工作，后面所有的工作都要在这个选择的引擎上进行，可想而知选择引擎的重要性。">
-<meta name="keywords" content="引擎选择">
+  <meta name="description" content="SingleFactory介绍单例对象在开发中很常用，每个单例对象都单独实现单例逻辑会很繁琐也不方便，不统一，同时单例对象数据也不方便管理。SingleFactory提供了一套快速创建单例对象并且对单例对象进行了管理，可以随时释放掉指定的单例对象，也可以直接释放掉创建过的所有单例对象。">
+<meta name="keywords" content="cocos creator,js,typescript,单例,Single">
 <meta property="og:type" content="article">
-<meta property="og:title" content="游戏项目架构及管理：引擎选择">
-<meta property="og:url" content="http://ituuz.com/2017/11/23/20171123_项目架构和管理_引擎选择/index.html">
+<meta property="og:title" content="SingleFactory-TypeScript中实现单例工厂">
+<meta property="og:url" content="http://ituuz.com/2020/04/24/Single/index.html">
 <meta property="og:site_name" content="ituuz">
-<meta property="og:description" content="引擎选择游戏引擎的选择是项目开始的第一项工作，后面所有的工作都要在这个选择的引擎上进行，可想而知选择引擎的重要性。">
+<meta property="og:description" content="SingleFactory介绍单例对象在开发中很常用，每个单例对象都单独实现单例逻辑会很繁琐也不方便，不统一，同时单例对象数据也不方便管理。SingleFactory提供了一套快速创建单例对象并且对单例对象进行了管理，可以随时释放掉指定的单例对象，也可以直接释放掉创建过的所有单例对象。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-01T12:35:47.379Z">
+<meta property="og:updated_time" content="2020-04-24T02:56:13.384Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="游戏项目架构及管理：引擎选择">
-<meta name="twitter:description" content="引擎选择游戏引擎的选择是项目开始的第一项工作，后面所有的工作都要在这个选择的引擎上进行，可想而知选择引擎的重要性。">
+<meta name="twitter:title" content="SingleFactory-TypeScript中实现单例工厂">
+<meta name="twitter:description" content="SingleFactory介绍单例对象在开发中很常用，每个单例对象都单独实现单例逻辑会很繁琐也不方便，不统一，同时单例对象数据也不方便管理。SingleFactory提供了一套快速创建单例对象并且对单例对象进行了管理，可以随时释放掉指定的单例对象，也可以直接释放掉创建过的所有单例对象。">
 
 
 
@@ -128,7 +128,7 @@
 
   
   
-  <link rel="canonical" href="http://ituuz.com/2017/11/23/20171123_项目架构和管理_引擎选择/">
+  <link rel="canonical" href="http://ituuz.com/2020/04/24/Single/">
 
 
 
@@ -139,7 +139,7 @@
 </script>
 
   
-  <title>游戏项目架构及管理：引擎选择 | ituuz</title>
+  <title>SingleFactory-TypeScript中实现单例工厂 | ituuz</title>
   
 
 
@@ -382,7 +382,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2017/11/23/20171123_项目架构和管理_引擎选择/">
+    <link itemprop="mainEntityOfPage" href="http://ituuz.com/2020/04/24/Single/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ituuz">
@@ -399,7 +399,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">游戏项目架构及管理：引擎选择
+          <h1 class="post-title" itemprop="name headline">SingleFactory-TypeScript中实现单例工厂
 
               
             
@@ -425,23 +425,13 @@
                 
               
 
-              <time title="创建时间：2017-11-23 18:00:36" itemprop="dateCreated datePublished" datetime="2017-11-23T18:00:36+08:00">2017-11-23</time>
+              <time title="创建时间：2020-04-24 10:53:54 / 修改时间：10:56:13" itemprop="dateCreated datePublished" datetime="2020-04-24T10:53:54+08:00">2020-04-24</time>
             </span>
           
 
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-01 20:35:47" itemprop="dateModified" datetime="2019-07-01T20:35:47+08:00">2019-07-01</time>
-              </span>
             
           
 
@@ -454,7 +444,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/架构管理/" itemprop="url" rel="index"><span itemprop="name">架构管理</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/TpyeScript/" itemprop="url" rel="index"><span itemprop="name">TpyeScript</span></a></span>
 
                 
                 
@@ -472,8 +462,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/11/23/20171123_项目架构和管理_引擎选择/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/11/23/20171123_项目架构和管理_引擎选择/" itemprop="commentCount"></span>
+                <a href="/2020/04/24/Single/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/24/Single/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -481,7 +471,7 @@
 
           
           
-            <span id="/2017/11/23/20171123_项目架构和管理_引擎选择/" class="post-meta-item leancloud_visitors" data-flag-title="游戏项目架构及管理：引擎选择">
+            <span id="/2020/04/24/Single/" class="post-meta-item leancloud_visitors" data-flag-title="SingleFactory-TypeScript中实现单例工厂">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -516,19 +506,24 @@
       
 
       
-        <h3 id="引擎选择"><a href="#引擎选择" class="headerlink" title="引擎选择"></a>引擎选择</h3><p>游戏引擎的选择是项目开始的第一项工作，后面所有的工作都要在这个选择的引擎上进行，可想而知选择引擎的重要性。<a id="more"></a>一般引擎的选择从下面几个维度来考虑：</p>
-<ul>
-<li>平台的选择：这里我们只考虑手游，不过现在H5游戏的不断流行，所以我们也要考虑H5平台的支持。目前H5平台支持比较好的引擎有Egret、laya和cocos creator，从工具链、性能和易用性上来说Egret更适合做H5平台的游戏，但是cocos creator近期发力不少，无论是从编辑器上还是性能上都有很出色的表现，我很期待它的后续发展。如果想做纯原生平台的游戏那么cocos2d-x和Unity都是不错的选择，这两款引擎占着整个原生游戏市场的80%以上的份额，国内市场份额更高。UE4现在也是很多大团队的选择，搭配技术积累较深厚和美术能力较强的团队可以做出出色的次世代表现的大作。</li>
-<li>2D与3D的选择：游戏立项时一定是可以确定该项目是2D项目还是3D项目，<strong>2D游戏没必要非得使用3D来表现，合理选择2D与3D能让游戏有更好的体验</strong>。目前H5平台上3D技术并不成熟，大多游戏还是采用2D来表现，所以。cocos2d-x在2D游戏开发上有着较大的优势，cocos2d-x比较轻量级、开源、可定制性强，同时2D平台很多解决方案也都很成熟。3D游戏首选Unity，市场上大量的3D游戏都是使用Unity引擎开发的，已经说明了Unity足够优秀。另外画面效果表现更为突出的虚幻也是很多团队的选择。这里有一篇Unity与UE4的对比文章，大家可以看一看（<a href="http://blog.csdn.net/mengyin521/article/details/53507505" target="_blank" rel="noopener">Unity 过度到 Unreal 4 对比参考 非常详细！</a>）。</li>
-<li><p>团队技术基础：这一定也是一定要考虑的，团队最擅长什么类型的游戏、什么引擎和什么编程语言等，都会对后期的开发有着至关重要的影响。上一点我提到：</p>
-<blockquote>
-<p>2D游戏没必要非得使用3D来表现，合理选择2D与3D能让游戏有更好的体验。</p>
-</blockquote>
-<p>  在这个时候就要变通了。比如团队之前有一定Unity的开发经验，并且团队没有人擅长C++开发，那么虽然项目是一款2D项目，比较适合使用cocos2d-x来开发，但是此时的最佳选择还是Unity，使用3D引擎开发2D游戏完全可以，但是让团队重新接受一款新引擎和一个新的编程语言（尤其是C++）是不理智的，后期带来的风险一定会很高。</p>
+        <h2 id="SingleFactory"><a href="#SingleFactory" class="headerlink" title="SingleFactory"></a>SingleFactory</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>单例对象在开发中很常用，每个单例对象都单独实现单例逻辑会很繁琐也不方便，不统一，同时单例对象数据也不方便管理。SingleFactory提供了一套快速创建单例对象并且对单例对象进行了管理，可以随时释放掉指定的单例对象，也可以直接释放掉创建过的所有单例对象。<br><a id="more"></a> </p>
+<h3 id="接口介绍"><a href="#接口介绍" class="headerlink" title="接口介绍"></a>接口介绍</h3><ul>
+<li><p>getInstance: 获取单例接口，传入继承SingleBase的类，则会返回该类的单例对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 创建接口</span></span><br><span class="line"><span class="comment"> * @param &#123;new() =&gt; T&#125; type T是要求继承自SingleBase的类型</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> getInstance&lt;T extends SingleBase&gt;<span class="function">(<span class="params">type: <span class="keyword">new</span>(</span>) =&gt;</span> T): T;</span><br></pre></td></tr></table></figure>
 </li>
-<li>招聘市场支持：这一点可能很多团队的管理者在立项之初并没有考虑过，其实也是很重要。比如公司想做一款表现较突出的次世代3D游戏，可能比较适合的方案就是选择UE4，但是招聘市场支持是需要去考虑的，能否快速组建出优秀的团队，包括技术、美术和策划，都是要对这个复杂的引擎有经验的，否则还不如采用Unity一样可以做出优秀的画面表现。除了前期的队伍搭建，还有当团队有人离开时是否能迅速招到人补充进来也是很重要的。同理后期的项目优化有可能也需要人才引进。如果选择了个冷门或者使用基数较小的技术或引擎，在人才储备和补充时就会捉襟见肘，严重时更会影响项目进度。</li>
+<li><p>clear: 清理指定的单例对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 释放指定的单例对象</span></span><br><span class="line"><span class="comment"> * @param &#123;new() =&gt; T&#125; type T是要求继承自SingleBase的类型</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> clear&lt;T extends SingleBase&gt;<span class="function">(<span class="params">type: <span class="keyword">new</span>(</span>) =&gt;</span> T): <span class="keyword">void</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>clearAll: 清理所有单例对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> clearAll: <span class="keyword">void</span>;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>当然影响技术的选择肯定不止这些因素，每个公司或者团队都有自己需要考量的因素，能够提炼出来的也希望大家提出来一起讨论。</p>
+<h3 id="用法实例"><a href="#用法实例" class="headerlink" title="用法实例"></a>用法实例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 目标类要求继承SingleBase</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">SingleBase</span> </span>&#123;</span><br><span class="line">    public test() &#123;</span><br><span class="line">        it.log(<span class="string">"我是单例对象"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取单例对象</span></span><br><span class="line"><span class="keyword">let</span> t = SingleFactory.getInstance(Test);</span><br><span class="line">t.test();</span><br></pre></td></tr></table></figure>
+<h3 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h3><ul>
+<li>主要是通过js可以用字符串调用属性的特性来实现单例对象的创建和赋值。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传入继承自SingleBase的类型，返回对应的实例对象</span></span><br><span class="line">public <span class="keyword">static</span> getInstance&lt;T extends SingleBase&gt;<span class="function">(<span class="params">type: <span class="keyword">new</span>(</span>) =&gt;</span> T): T &#123;</span><br><span class="line">    <span class="keyword">if</span> (!type[<span class="string">"_instance"</span>]) &#123;</span><br><span class="line">        <span class="keyword">let</span> target = <span class="keyword">new</span> type();</span><br><span class="line">        type[<span class="string">"_instance"</span>] = target;</span><br><span class="line">        <span class="comment">// 单例对象可以重写init接口来实现初始化逻辑</span></span><br><span class="line">        target.init();</span><br><span class="line">        <span class="comment">// 缓存单例对象的引用，方便管理，用于后期释放</span></span><br><span class="line">        SingleFactory._instanceList.set(type, target);</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> type[<span class="string">"_instance"</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>改SingleFactory工具类整合在我开源的一个cocos creator游戏开发框架中，欢迎关注：<a href="https://github.com/yue19870813/ituuz-x" target="_blank" rel="noopener">https://github.com/yue19870813/ituuz-x</a></p>
 
       
     </div>
@@ -598,7 +593,15 @@
         
         <div class="post-tags">
           
-            <a href="/tags/引擎选择/" rel="tag"># 引擎选择</a>
+            <a href="/tags/cocos-creator/" rel="tag"># cocos creator</a>
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/typescript/" rel="tag"># typescript</a>
+          
+            <a href="/tags/单例/" rel="tag"># 单例</a>
+          
+            <a href="/tags/Single/" rel="tag"># Single</a>
           
         </div>
       
@@ -611,8 +614,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/22/20171122_项目架构和管理/" rel="next" title="游戏项目架构及管理 序">
-                <i class="fa fa-chevron-left"></i> 游戏项目架构及管理 序
+              <a href="/2020/04/23/single_factory/" rel="next" title="SingleFactory-TypeScript中实现单例工厂">
+                <i class="fa fa-chevron-left"></i> SingleFactory-TypeScript中实现单例工厂
               </a>
             
           </div>
@@ -620,10 +623,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/14/20171214_项目架构和管理_网络通信/" rel="prev" title="游戏项目架构及管理：网络通信">
-                游戏项目架构及管理：网络通信 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -940,7 +939,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#引擎选择"><span class="nav-number">1.</span> <span class="nav-text">引擎选择</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SingleFactory"><span class="nav-number">1.</span> <span class="nav-text">SingleFactory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口介绍"><span class="nav-number">1.2.</span> <span class="nav-text">接口介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法实例"><span class="nav-number">1.3.</span> <span class="nav-text">用法实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现细节"><span class="nav-number">1.4.</span> <span class="nav-text">实现细节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">1.5.</span> <span class="nav-text">最后</span></a></li></ol></li></ol></div>
             
 
           </div>
